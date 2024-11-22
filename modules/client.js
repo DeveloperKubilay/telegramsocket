@@ -46,7 +46,7 @@ async function start(apiId, apiHash, botid){
                     if(args[0] == "Data"){
                         sessions[sessionid]?.emit('data', fileBuffer);
                     }else if(args[0] == "End"){
-                        sessions[sessionid]?.emit('end', sessionid);
+                        sessions[sessionid]?.emit('close', sessionid);
                         delete sessions[sessionid]
                     }
                 }).catch(err => {});
