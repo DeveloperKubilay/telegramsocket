@@ -41,3 +41,9 @@ telegrambot.on('connection', (client) => {
    // setTimeout(()=> client.end(), 2000)
 });
 ```
+
+# for installition
+
+```bash
+npm i telegram node-telegram-bot-api axios
+```
