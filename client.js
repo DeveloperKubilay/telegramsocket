@@ -5,11 +5,15 @@ const telegramuser = require('./modules/client')(
     "MyFavBotname"                       // botid
 );
 
-const clinent = telegramuser.createConnection();
-clinent.write("hello world!")
-clinent.on('data', (data) => {
+const client = telegramuser.createConnection();
+
+client.write("hello world!")
+
+client.on('data', (data) => {
     console.log(`Data: ${data}`);
 });
-clinent.on("end", (data) => {
+
+client.on("close", (data) => {
     console.log(":(") 
 })
+// setTimeout(()=> client.end(), 2000)
