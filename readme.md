@@ -42,7 +42,7 @@ telegrambot.on('connection', (client) => {
 });
 ```
 
-# for installition
+# for installation
 
 ```bash
 npm i telegram node-telegram-bot-api axios
