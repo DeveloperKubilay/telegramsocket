@@ -20,7 +20,7 @@ clinent.on("end", (data) => {
 ```
 ## Server  (telegram bot)
 ```js
-const telegrambot = require('./modules/serve')('5294567893:BBFYdRlp8EQ7ur8Fwcy...'); // write ur bot token
+const telegrambot = require('./modules/serve')('5294567893:BBFYdRlp8...'); // write ur bot token
 
 telegrambot.on('connection', (client) => {
     client.write("yo whatspp")
