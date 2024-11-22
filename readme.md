@@ -17,7 +17,7 @@ client.on('data', (data) => {
     console.log(`Data: ${data}`);
 });
 
-client.on("end", (data) => {
+client.on("close", (data) => {
     console.log(":(") 
 })
 // setTimeout(()=> client.end(), 2000)
@@ -35,7 +35,7 @@ telegrambot.on('connection', (client) => {
         console.log("my bro sayed "+data);
     });
 
-    client.on('end', (data) => {
+    client.on('close', (data) => {
         console.log(`:/`);
     });
    // setTimeout(()=> client.end(), 2000)
