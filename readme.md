@@ -10,6 +10,7 @@ const telegramuser = require('./modules/client')(
 );
 
 const client = telegramuser.createConnection();
+//client.id
 
 client.write("hello world!")
 
@@ -17,7 +18,7 @@ client.on('data', (data) => {
     console.log(`Data: ${data}`);
 });
 
-client.on("close", (data) => {
+client.on("close", (id) => {
     console.log(":(") 
 })
 // setTimeout(()=> client.end(), 2000)
@@ -27,6 +28,7 @@ client.on("close", (data) => {
 const telegrambot = require('./modules/serve')('5294567893:BBFYdRlp8...'); // write ur bot token
 
 telegrambot.on('connection', (client) => {
+    //client.id 
     
     console.log(`Connection sucsess`);
     client.write("yo whatspp")
@@ -35,7 +37,7 @@ telegrambot.on('connection', (client) => {
         console.log("my bro sayed "+data);
     });
 
-    client.on('close', (data) => {
+    client.on('close', (id) => {
         console.log(`:/`);
     });
    // setTimeout(()=> client.end(), 2000)
