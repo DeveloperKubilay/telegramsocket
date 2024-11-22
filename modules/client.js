@@ -16,7 +16,7 @@ async function start(apiId, apiHash, botid){
         useWSS: true,
         maxReconnects: 100000000000000000000000000000000000000,
         retryDelay: 1000,
-        logLevel: "none",
+        baseLogger: {'debug':()=>{},'info':()=>{},'warn':()=>{},'error':()=>{}},
         autoReconnect: true,
     });
 
