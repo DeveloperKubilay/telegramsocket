@@ -9,29 +9,35 @@ const telegramuser = require('./modules/client')(
     "MyFavBotname"                       // botid
 );
 
-const clinent = telegramuser.createConnection();
-clinent.write("hello world!")
-clinent.on('data', (data) => {
+const client = telegramuser.createConnection();
+
+client.write("hello world!")
+
+client.on('data', (data) => {
     console.log(`Data: ${data}`);
 });
-clinent.on("end", (data) => {
+
+client.on("end", (data) => {
     console.log(":(") 
 })
+// setTimeout(()=> client.end(), 2000)
 ```
 ## Server  (telegram bot)
 ```js
 const telegrambot = require('./modules/serve')('5294567893:BBFYdRlp8...'); // write ur bot token
 
 telegrambot.on('connection', (client) => {
-    client.write("yo whatspp")
     
     console.log(`Connection sucsess`);
+    client.write("yo whatspp")
+        
     client.on('data', (data) => {
         console.log("my bro sayed "+data);
     });
+
     client.on('end', (data) => {
         console.log(`:/`);
     });
-
-}); 
+   // setTimeout(()=> client.end(), 2000)
+});
 ```
