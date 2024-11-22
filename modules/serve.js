@@ -12,7 +12,7 @@ return module.exports = function(token){
  const sessionchannel = {}
  
  function doend(sessionid){
-     session[sessionid]?.emit('end', sessionid);
+     session[sessionid]?.emit('close', sessionid);
      delete session[sessionid]
      delete sessionchannel[sessionid]
      return true;
