@@ -36,7 +36,7 @@ return module.exports = function(token){
          if(args[0] == "Newconnection") {
              const newevent = new EventEmitter();
              newevent.id = sessionid;
-             newevent.end = doend(sessionid)
+             newevent.end = ()=> doend(sessionid)
  
              session[sessionid] = newevent
              newevent.write = function(data) {
